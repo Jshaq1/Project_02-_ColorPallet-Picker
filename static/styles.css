@@ -1,0 +1,139 @@
+#topnav {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 50px;
+ }
+ 
+ .nav-link {
+    display: inline-block;
+    width: 150px;
+    height: 55px;
+ 
+    color: rgb(0, 0, 0);
+ 
+    text-align: center;
+    line-height: 55px;
+ 
+    text-decoration: none;
+ }
+ 
+ #logo {
+    width: 200px;
+    color: white;
+    background-color: rgb(255, 0, 0);
+ 
+    font-weight: bold;
+    border-radius: 10px;
+ }
+
+ 
+#menu{
+    display: flex;
+    flex-direction: column;
+}
+
+#menu_item{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#menu_image{
+    max-width: 50%;
+    border-radius: 8px;
+}
+
+#details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-right: 5px;
+    
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 400px;
+   
+}
+
+#form_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100px;
+   
+}
+
+#form_container_email{
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    height: 500px;
+
+}
+
+#form_container{
+    display: flex;
+    justify-content: space-around;
+    
+    width: 100%;
+    height: 200px;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f100;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a:hover {
+    color: red;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div{
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+}
