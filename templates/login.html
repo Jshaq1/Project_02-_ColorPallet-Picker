@@ -11,19 +11,21 @@
         </div> -->
         <div class="form form-signup">
             <div class="form-heading">Welcome: Sign Up</div>
-            <form action="">
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Password">
-                <button class="button">Sign Up</button>
+            <form id="form_login" method="POST" action="/sign_up_action">
+                <input type="hidden" value={{id}} name='id'>
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit">
             </form>
         </div>
         <div class="form form-login">
             <div class="form-heading">Welcome Back</div>
             <form id="form_login" method="POST" action='/login_page_action'>
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Password">
-                <button class="button">Log In</button>
+                <input type="hidden" value={{id}} name='id'>
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit">
             </form>
         </div>
     </div>

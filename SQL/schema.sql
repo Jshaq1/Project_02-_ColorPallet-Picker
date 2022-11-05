@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS scenes;
+DROP TABLE IF EXISTS saved_pallets;
+
+
+
 CREATE TABLE users (
     id SERIAL PRIMARY KEY, 
     name VARCHAR(50) NOT NULL,
@@ -18,5 +24,10 @@ CREATE TABLE saved_pallets (
     color3 TEXT,
     color4 TEXT,
     color5 TEXT,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    user_id INTEGER,
+    
+
+    CONSTRAINT fk_website_user
+        FOREIGN KEY (user_id)
+         REFERENCES users(id)
 );

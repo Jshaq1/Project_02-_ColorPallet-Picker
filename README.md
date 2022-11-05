@@ -6,7 +6,7 @@ Project_02 _ColorPallet Picker
 
 
 ## Work Plan
-- User Story    []
+- User Story    [x]
 - User Flow     []     
 - Page Elements []
 - Wireframes    []
@@ -17,9 +17,21 @@ Project_02 _ColorPallet Picker
 - JS            []
 
 
-## PAGES / ELEMENTS
+## PAGES 
+- Home []
+    - Color Pallet Generator [x] 
+    - Jinja template []
+    - Css []
 
-# INDEX/HOME
+- Login/signup
+    - Signup [x]
+    - Password Hash [x] 
+    - Login Auth [x]
+    - Error message [] 
+
+
+# ElEMENTS
+## INDEX/HOME
 - Nav bar 
     - Logo
     - Login Logout
@@ -44,7 +56,7 @@ Project_02 _ColorPallet Picker
     - Users profile who made it
 
 
-# USER PROFILE
+## USER PROFILE
 - Nav bar 
     - Logo
     - Logout
