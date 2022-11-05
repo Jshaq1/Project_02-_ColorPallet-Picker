@@ -1,45 +1,116 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+    <style>
+        .color-img1{
+            height: 100px;
+            border-radius: 12px;
+            background-color: {{color_one}};
+        }
+        .color-img2{
+            height: 100px;
+            border-radius: 12px;
+            background-color: {{color_two}};
+        }
+        .color-img3{
+            height: 100px;
+            border-radius: 12px;
+            background-color: {{color_three}};
+        }
+        .color-img4{
+            height: 100px;
+            border-radius: 12px;
+            background-color: {{color_four}};
+        }
+        .color-img5{
+            height: 100px;
+            border-radius: 12px;
+            background-color: {{color_five}};
+        }
+        
 
+      </style>
+</head>
 <body>
 
 
-    <div id="hero-container">
+    <div class="section1">
 
-        <h1></h1>
+        
+        <h2>color pallet generator</h2>
+        <div class="colors">
+            <div class="color">
+                <div class="color-img1"></div>
+                <div class="color-text">{{color_one}}</div>
+            </div>
+            <div class="color">
+                <div class="color-img2"></div>
+                <div class="color-text">#EEEDFO</div>
+            </div>
+            <div class="color">
+                <div class="color-img3"></div>
+                <div class="color-text">#EEEDFO</div>
+            </div>
+            <div class="color">
+                <div class="color-img4"></div>
+                <div class="color-text">#EEEDFO</div>
+            </div>
+            <div class="color">
+                <div class="color-img5"></div>
+                <div class="color-text">#EEEDFO</div>
+            </div>
+        </div>
 
+        <!-- <div id="title-container">
+            <h1>THIS PAGE IS A PALLET</h1>
+            
+        </div>
+
+        <div id="instructions">
+            
+
+        </div> -->
+        
+        
+
+
+    </div>
+    <div class="section2">
+        <form action="/"><input type="hidden" value={{id}}
+            name='id'><button>Generate</button></form>
 
     </div>
     
 
-    <div id="hero-container">
-
+    <!-- <div id="hero-container">
+        
         <div class="card">
             <img src="https://cdn.pixabay.com/photo/2017/03/27/13/33/blaze-2178749__340.jpg" alt="" class="card-image">
-            <h3 class="card-title">The beach</h3>
+            <h3 class="card-title"></h3>
         </div>
         <div class="card">
             <img src="https://cdn.pixabay.com/photo/2017/03/27/13/33/blaze-2178749__340.jpg" alt="" class="card-image">
-            <h3 class="card-title">The beach</h3>
+            <h3 class="card-title"></h3>
         </div>
         <div class="card">
             <img src="https://cdn.pixabay.com/photo/2017/03/27/13/33/blaze-2178749__340.jpg" alt="" class="card-image">
-            <h3 class="card-title">The beach</h3>
+            <h3 class="card-title"></h3>
         </div>
         <div class="card">
             <img src="https://cdn.pixabay.com/photo/2017/03/27/13/33/blaze-2178749__340.jpg" alt="" class="card-image">
-            <h3 class="card-title">The beach</h3>
+            <h3 class="card-title"></h3>
         </div>
         <div class="card">
             <img src="https://cdn.pixabay.com/photo/2017/03/27/13/33/blaze-2178749__340.jpg" alt="" class="card-image">
-            <h3 class="card-title">The beach</h3>
+            <h3 class="card-title"></h3>
         </div>
         <div class="card">
             <img src="https://cdn.pixabay.com/photo/2017/03/27/13/33/blaze-2178749__340.jpg" alt="" class="card-image">
-            <h3 class="card-title">The beach</h3>
+            <h3 class="card-title"></h3>
         </div>
-    </div>
+       
+    </div> -->
 
 
 

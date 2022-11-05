@@ -1,7 +1,39 @@
-<div class="popup">
-    <div class="close-btn">&times;</div>
-    <div class="form">
-        <h2>Log in</h2>
-        <div class="form-element"></div>
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="login-container">
+    <!-- <div class="message signup">
+        <div class="button-wrapper">
+            <button class="button" id="signup">Sign Up</button>
+            <button class="button" id="login">Login</button>
+        </div> -->
+        <div class="form form-signup">
+            <div class="form-heading">Welcome: Sign Up</div>
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Password">
+                <button class="button">Sign Up</button>
+            </form>
+        </div>
+        <div class="form form-login">
+            <div class="form-heading">Welcome Back</div>
+            <form id="form_login" method="POST" action='/login_page_action'>
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Password">
+                <button class="button">Log In</button>
+            </form>
+        </div>
     </div>
+   
+
+
+
+
+
+
 </div>
+<script src="script.js"></script>
+{% endblock %}
