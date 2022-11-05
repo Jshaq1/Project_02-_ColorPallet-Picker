@@ -11,10 +11,13 @@ app.secret_key = 'SECRET KEY'
 
 ## HOME PAGE 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
     user_id = session.get('user_id')
     user_name = request.cookies.get('user_name')
+   
+    
+    
     
     url = "http://colormind.io/api/"
     data = {
@@ -32,7 +35,7 @@ def index():
 
 
   
-    return render_template('index.html', generated_colors = generated_colors, user_name = user_name)
+    return render_template('index.html', generated_colors = generated_colors, user_name = user_name, colors=colors)
     
 
 
@@ -90,12 +93,16 @@ def log_out_action():
     return response 
 
 
-@app.route('/save')
+@app.route('/save', methods=['POST', 'GET'])
 def save_action():
     user_id = session.get('user_id')
     user_name = request.cookies.get('user_name')
     pallet_name = request.form.get('pallet_name')
-    insert_data(f'INSERT INTO saved_pallets (name, color1, color2, color3, color4, color5, user_id)', [pallet_name, ])
+    generated_colors = request.form.get('color_codes')
+    print(generated_colors)
+    
+
+    # insert_data(f'INSERT INTO saved_pallets (name, color1, color2, color3, color4, color5, user_id)', [pallet_name, ])
     
     return redirect('/')
 

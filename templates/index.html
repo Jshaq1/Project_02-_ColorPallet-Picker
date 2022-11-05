@@ -1,49 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <head>
     <style>
-        .color-img1{
+        .color-img1 {
             height: 100px;
             border-radius: 12px;
-            
-        }
-       
-        
-        
 
-      </style>
+        }
+    </style>
 </head>
+
 <body>
 
 
     <div class="section1">
 
-        
+
         <h2>color pallet generator</h2>
-        <div class="colors">
-            {% for r,g,b in generated_colors %}
-            <div class="color">
-                <div class="color-img1" style="background-color: rgb({{r}},{{g}},{{b}}) ;" ></div>
-                <div class="color-text" >{{r}},{{g}},{{b}}</div>
+        
+            <div class="colors">
+                {% for r,g,b in generated_colors %}
+                <div class="color">
+                    <div class="color-img1" style="background-color: rgb({{r}},{{g}},{{b}});"></div>
+                    <div class="color-text" data="{{r}},{{g}},{{b}}">{{r}},{{g}},{{b}}</div>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-            
-    </div>
-    <div class="section2">
-        <form action="/">
-            <input type="hidden" value={{id}} name='id'>
-            <button>Generate</button></form>
-        <form action="/save" method="post">
-            <input type="hidden" value={{id}} name='id'>
-            <input type="text" name="pallet_name" placeholder="Pallet Name">
-            <input type="submit">
-        </form>
 
-    </div>
+        <div class="section2">
+            <form action="/">
+                <input type="hidden" value={{id}} name='id'>
+                <button>Generate</button>
+            </form>
+            <form action="/save" method="POST">
+                <input type="hidden" value='{{colors}}' name='color_codes'>
+                <input type="text" name="pallet_name" placeholder="Pallet Name">
+                <input type="submit">
+            </form>
 
-    
-    
+        </div>
+        
 
 
 
@@ -51,7 +49,10 @@
 
 
 
-    <script src="script.js"></script>
+
+
+
+        <script src="script.js"></script>
 </body>
 
 </html>

@@ -16,10 +16,12 @@ for row in colors:
     r, g, b = row
     generated_color.append([r,g,b])
 
-
-print(generated_color)
+col = ', '.join(str(row) for row in generated_color)
+print(col)
     
 
+test = '[[24, 30, 28], [96, 130, 92], [188, 170, 141], [171, 149, 89], [46, 21, 18]]'
+print(test.split(''))
 
 
 
