@@ -19,6 +19,7 @@ CREATE TABLE scenes (
 
 CREATE TABLE saved_pallets (
     id SERIAL PRIMARY KEY, 
+    name TEXT,
     color1 TEXT,
     color2 TEXT,
     color3 TEXT,

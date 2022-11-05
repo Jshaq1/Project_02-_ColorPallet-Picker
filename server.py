@@ -2,7 +2,6 @@ import psycopg2
 import bcrypt
 import requests
 from flask import Flask, render_template, request, redirect, session
-from color import generate_colors
 from controller import insert_data, sql_select1
 
 app = Flask(__name__)
@@ -24,28 +23,25 @@ def index():
     }
     response = requests.post(url, json=data)
     results  = response.json()
+    colors = results['result']
+    
+    generated_colors = []
+    for row in colors:
+        r, g, b = row
+        generated_colors.append([r,g,b])
 
-    color_one = generate_colors(results['result'][0])
-    color_two = generate_colors(results['result'][1])
-    color_three = generate_colors(results['result'][2])
-    color_four = generate_colors(results['result'][3])
-    color_five = generate_colors(results['result'][4])
 
-
-    return render_template('index.html', 
-    color_one = color_one, 
-    color_two = color_two, 
-    color_three = color_three, 
-    color_four = color_four,
-    color_five = color_five)
+  
+    return render_template('index.html', generated_colors = generated_colors, user_name = user_name)
     
 
 
 
 ## LOGIN / LOGOUT
 @app.route('/login_page')
-def add_user():
+def log_in():
     user_id = request.cookies.get('user_id')
+    
     
     return render_template('login.html')
 
@@ -69,7 +65,7 @@ def login_page_action():
     else:
         error = 'You arent registered'
         return redirect('/login_page')
-        
+
     return response
 
 
@@ -84,6 +80,24 @@ def sign_up_action():
     return redirect('/login_page')
 
 
+@app.route('/logout')
+def log_out_action():
+
+    response = redirect('/')
+    # response.delete_cookie('user_id')
+    response.delete_cookie('session')
+    
+    return response 
+
+
+@app.route('/save')
+def save_action():
+    user_id = session.get('user_id')
+    user_name = request.cookies.get('user_name')
+    pallet_name = request.form.get('pallet_name')
+    insert_data(f'INSERT INTO saved_pallets (name, color1, color2, color3, color4, color5, user_id)', [pallet_name, ])
+    
+    return redirect('/')
 
 app.run(debug=True)
 

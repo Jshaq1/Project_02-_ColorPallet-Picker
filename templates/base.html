@@ -1,95 +1,37 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <link rel="stylesheet" href="static/styles.css" />
-  <link rel="stylesheet" href="static/login.css" />
-  <link rel="stylesheet" href="static/main.css" />
-  <title>My Webpage</title>
-  
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="stylesheet" href="static/login.css" />
+    <link rel="stylesheet" href="static/main.css" />
+    <title>My Webpage</title>
+
 </head>
+
 <body>
-  <header>
-    <nav id="navbar">
-        {% if session.get('user_id') %}
-        <a class="nav-link" href="/">Look//Feel</a>
-        <div id="generator">
-          <div id="section-wrapper">
-              <div class="pallet-color-wrapper" id="color0">
-                  <div  id="color" data-id="0" ></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color1">
-                  <div id="color" data-id="1" ></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color2">
-                  <div id="color" data-id="2"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color3">
-                  <div id="color" data-id="3"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color4">
-                  <div id="color" data-id="4"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-  
-  
-          </div>
-          
-  
-  
-  
-      </div>
-        <div class="dropdown">
-        <a class="nav-link" href="/profile" ><b>{{user_name}}</b></a>
+    <header>
+        <nav id="navbar">
+            {% if session.get('user_id') %}
+            <a class="nav-link" href="/">Look//Feel</a>
+            <div class="dropdown">
+            <a class="nav-link" ><b>{{user_name}}</b></a>
             <div class="dropdown-content">
               <a href="/logout">Log out</a>
             </div>
-        {% else %}
-        <a class="nav-link" href="/">Look//Feel</a>
-        <div id="generator">
-          <div id="section-wrapper">
-              <div class="pallet-color-wrapper" id="color0">
-                  <div id="color" data-id="0"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color1">
-                  <div id="color" data-id="1"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color2">
-                  <div id="color" data-id="2"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color3">
-                  <div id="color" data-id="3"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-              <div class="pallet-color-wrapper" id="color4">
-                  <div id="color" data-id="4"></div>
-                  <!-- <div id="tools"></div> -->
-              </div>
-  
-  
-          </div>
-          
-  
-  
-  
-      </div>
-        <a  class="nav-link" href="/login_page"><b>Login</b></a>
+                </div>
+                {% else %}
+                <a class="nav-link" href="/">Look//Feel</a>
+                <a class="nav-link" href="/login_page"><b>Login</b></a>
+                {% endif %}
 
-        {% endif %}
 
-        
 
-    </nav>
+        </nav>
 
-</header>
+    </header>
 
     {% block content %}{% endblock %}
-    
+
 
 </body>
