@@ -2,7 +2,7 @@ import psycopg2
 import bcrypt
 import requests
 from flask import Flask, render_template, request, redirect, session
-from controller import insert_data, sql_select1
+from controller import insert_data, sql_select1, sql_select, delete_pallet
 
 app = Flask(__name__)
 
@@ -10,7 +10,6 @@ app.secret_key = 'SECRET KEY'
 
 
 ## HOME PAGE 
-
 @app.route('/', methods=['POST', 'GET'])
 def index():
     user_id = session.get('user_id')
@@ -29,14 +28,31 @@ def index():
     colors = results['result']
     
     generated_colors = []
+    i = 0
     for row in colors:
         r, g, b = row
-        generated_colors.append([r,g,b])
+        i += 1
+        generated_colors.append([r,g,b,i])
+        
 
 
   
     return render_template('index.html', generated_colors = generated_colors, user_name = user_name, colors=colors)
     
+@app.route('/save', methods=['POST', 'GET'])
+def save_action():
+    user_id = session.get('user_id')
+    user_name = request.cookies.get('user_name')
+    pallet_name = request.form.get('pallet_name')
+    color1 = request.form.get('color_codes1')
+    color2 = request.form.get('color_codes2')
+    color3 = request.form.get('color_codes3')
+    color4 = request.form.get('color_codes4')
+    color5 = request.form.get('color_codes5')
+
+    insert_data(f'INSERT INTO saved_pallets (name, color1, color2, color3, color4, color5, user_id) VALUES ( %s , %s , %s , %s , %s , %s , %s )', [pallet_name, color1, color2, color3, color4, color5, user_id])
+    
+    return redirect('/')
 
 
 
@@ -93,18 +109,27 @@ def log_out_action():
     return response 
 
 
-@app.route('/save', methods=['POST', 'GET'])
-def save_action():
+@app.route('/profile')
+def profile():
     user_id = session.get('user_id')
     user_name = request.cookies.get('user_name')
-    pallet_name = request.form.get('pallet_name')
-    generated_colors = request.form.get('color_codes')
-    print(generated_colors)
+
+    results = sql_select('SELECT name, color1, color2, color3, color4, color5 FROM saved_pallets WHERE user_id = %s', [user_id])
+    saved_pallets=[]
+    for row in results:
+        name, color1, color2, color3, color4, color5 = row
+        saved_pallets.append([name, color1, color2, color3, color4, color5])
     
 
-    # insert_data(f'INSERT INTO saved_pallets (name, color1, color2, color3, color4, color5, user_id)', [pallet_name, ])
-    
-    return redirect('/')
+
+    return render_template('profile.html', saved_pallets = saved_pallets)
+
+@app.route('/delete_pallet_action', methods=['POST'])
+def delete_pallet_action():
+    name = request.form.get('name')
+    user_id = session.get('user_id')
+    delete_pallet(name, user_id)
+    return redirect('/profile')
 
 app.run(debug=True)
 
