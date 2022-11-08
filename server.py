@@ -131,7 +131,8 @@ def delete_pallet_action():
     delete_pallet(name, user_id)
     return redirect('/profile')
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 

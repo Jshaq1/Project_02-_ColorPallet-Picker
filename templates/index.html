@@ -17,8 +17,11 @@
         <div class="colors">
             {% for r,g,b,i in generated_colors %}
             <div class="color">
-                <div class="color-img1" style="background-color: rgb({{r}},{{g}},{{b}});"></div>
+                <div class="color-img1" style="background-color: rgb({{r}},{{g}},{{b}});">
+                    
+                </div>
                 <div class="color-text" data="{{i}}">{{r}},{{g}},{{b}}</div>
+                
             </div>
             {% endfor %}
         </div>
