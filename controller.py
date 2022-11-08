@@ -2,7 +2,7 @@ import psycopg2
 import os
 from flask import Flask, render_template, request, redirect
 
-DB_URL = ox.environ.get('DATABASE_URL', 'dbname=colorpicker')
+DB_URL = os.environ.get('DATABASE_URL', 'dbname=colorpicker')
 
 def insert_data(query, params = []):
 
