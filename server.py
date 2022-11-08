@@ -2,7 +2,7 @@ import psycopg2
 import bcrypt
 import requests
 from flask import Flask, render_template, request, redirect, session
-from controller import insert_data, sql_select1, sql_select, delete_pallet
+from database import insert_data, sql_select1, sql_select, delete_pallet
 
 app = Flask(__name__)
 
