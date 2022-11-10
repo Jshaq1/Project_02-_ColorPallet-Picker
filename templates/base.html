@@ -2,8 +2,11 @@
 <html>
 
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+        </style>
     <link rel="stylesheet" href="static/styles.css" />
-    <link rel="stylesheet" href="static/login.css" />
+    <!-- <link rel="stylesheet" href="static/login.css" /> -->
     <link rel="stylesheet" href="static/pallet.css" />
     <title>My Webpage</title>
 
@@ -13,17 +16,13 @@
     <header>
         <nav id="navbar">
             {% if session.get('user_id') %}
+            
+            <a class="nav-link" href="/">hue.</a>
+            <a class="nav-link" href="/profile">{{user_name}}</a>
+            {% else %}
             <a class="nav-link" href="/">Look//Feel</a>
-            <div class="dropdown">
-            <a class="nav-link" href="/profile"><b>{{user_name}}</b></a>
-            <div class="dropdown-content">
-              <a href="/logout">Log out</a>
-            </div>
-                </div>
-                {% else %}
-                <a class="nav-link" href="/">Look//Feel</a>
-                <a class="nav-link" href="/login_page"><b>Login</b></a>
-                {% endif %}
+            <a class="nav-link" href="/login_page"><b>Login</b></a>
+            {% endif %}
 
 
 

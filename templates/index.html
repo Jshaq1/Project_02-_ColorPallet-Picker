@@ -12,24 +12,22 @@
     <div class="section1">
 
 
-        <h2>color pallet generator</h2>
+        
 
         <div class="colors">
             {% for r,g,b,i in generated_colors %}
-            <div class="color">
-                <div class="color-img1" style="background-color: rgb({{r}},{{g}},{{b}});">
-                    
-                </div>
+                <div class="color" style="background-color: rgb({{r}},{{g}},{{b}});">
                 <div class="color-text" data="{{i}}">{{r}},{{g}},{{b}}</div>
-                
+                <!-- <button class="btn">Copy</button> -->
             </div>
+            
             {% endfor %}
         </div>
 
         <div class="section2">
-            <form action="/">
+            <form class="generate" action="/">
                 <input type="hidden" value={{id}} name='id'>
-                <button>Generate</button>
+                <button class="btn">Generate</button>
             </form>
             {% if session.get('user_id') %}
             <form action="/save" method="POST">
@@ -42,7 +40,7 @@
             {% endif %}
 
         </div>
-
+        </div>
         <script src="script.js"></script>
 </body>
 

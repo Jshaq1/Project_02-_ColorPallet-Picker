@@ -1,12 +1,15 @@
-import psycopg2
+
 import bcrypt
 import requests
 from flask import Flask, render_template, request, redirect, session
 from database import insert_data, sql_select1, sql_select, delete_pallet
+import os
 
 app = Flask(__name__)
 
-app.secret_key = 'SECRET KEY'
+secret_key = os.environ.get('secret_key')
+print(secret_key)
+app.secret_key = secret_key
 
 
 ## HOME PAGE 
@@ -65,6 +68,7 @@ def log_in():
     return render_template('login.html')
 
 
+
 @app.route('/login_page_action', methods=['POST'])
 def login_page_action():
     user_email = request.form.get('email')
@@ -103,7 +107,7 @@ def sign_up_action():
 def log_out_action():
 
     response = redirect('/')
-    # response.delete_cookie('user_id')
+    
     response.delete_cookie('session')
     
     return response 

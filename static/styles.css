@@ -1,23 +1,36 @@
+
+
+header{
+    justify-content: center;
+    height: 10vh;
+}
+
 #navbar {
     display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    overflow: auto;
-    height: auto;
+    justify-content: right;
+    align-items: center;
+    margin-left: 10px;
+    height: 100%;
+    
+   
     
  }
  
  .nav-link {
-    display: inline-block;
-   text-align: center;
-   padding: 14px;
-   color: rgb(255, 255, 255);
-   text-decoration: none;
-   font-size: 17px;
-   font-weight: bolder;
-   margin-top: 10px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 6vh;
+    color: black;
+
+    
  }
+ a:visited { 
+    text-decoration: none; 
+   }
  
 
  
@@ -26,40 +39,10 @@
     flex-direction: column;
 }
 
-
-#form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 400px;
-   
+h2{
+    color: red;
 }
 
-#form_login{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100px;
-   
-}
-
-#form_container_email{
-    display: flex;
-    justify-content: center;
-    
-    width: 100%;
-    height: 500px;
-
-}
-
-#form_container{
-    display: flex;
-    justify-content: space-around;
-    
-    width: 100%;
-    height: 200px;
-
-}
 
 
 h1{
@@ -73,18 +56,16 @@ h1{
 body{
     display: flex;
     flex-direction: column;
-    background-color: rgb(32, 32, 32);
-    margin-left: 5%;
-    margin-right: 5%;
+    background-color: rgb(246, 246, 246);
+    margin: 0 0 0 0;
+    height: 100vh;
+    
     
         
      
 }
 
-header{
-    height: 70px;
-    border-bottom: 4px solid rgb(255, 236, 192);
-}
+
 
 #hero-container{
     
@@ -116,61 +97,11 @@ header{
 }
 
 
-#generator{
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex: 2;
-    flex-direction: row;
-}
-#section-wrapper{
-    
-
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height:100%;
-    
-}
-.pallet-color-wrapper{
-    
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 10px;
-}
-#color{
-    
-    border-right: 1px solid black;
-    flex:1 ;
-    
-    
-}
-
-#tools{
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    background-color: blue;
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
 
 
     
 
-.card{
+/* .card{
     flex: 1;
     max-width: 250px;
     height: 80%;
@@ -214,12 +145,14 @@ header{
     border-radius: 12px;
    
 
-}
+} */
 
 
 .section1 {
     text-align: center;
-    margin-top: 30px;
+    height: 82vh;
+    width: 100%;
+    
 }
 
 .section1 h2{
@@ -229,17 +162,16 @@ header{
 
 .section1 .colors {
     width: 100%;
+    height: 100%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 15px;
+    display: flex;
+    flex-direction: column;
+    
     
 }
 .section1 .colors .color{
-    background: white;
-    box-shadow: 0.4px 0.4px 40px rgba(0, 0, 0, 0.526);
-    padding: 15px;
-    border-radius: 10px;
+    flex: 1;
+    
 }
 
 
@@ -249,15 +181,16 @@ header{
 }
 
 .section2{
+    display: flex;
     text-align: center;
-    margin-top: 50px;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: beige;
+    height: 8vh;
 }
 
-.section2 .btn {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:20px;
-}
-
-h2{
-    color: red;
+.generate{
+    flex: 1;
+    align-items: left;
+    justify-content: left;
 }
