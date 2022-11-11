@@ -7,13 +7,13 @@ Project_02 _ColorPallet Picker
 
 ## Work Plan
 - User Story    [x]
-- User Flow     []     
-- Page Elements []
+- User Flow     [x]     
+- Page Elements [x]
 - Wireframes    [x]
-- Basic HTML    []
+- Basic HTML    [x]
 - Working API   [x]
-- Pyth Server   []
-- CSS           []
+- Pyth Server   [x]
+- CSS           [x]
 - JS            []
 
 
