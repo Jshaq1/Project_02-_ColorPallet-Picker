@@ -3,11 +3,8 @@
 {% block content %}
 
 <head>
-    <style>
-        
-    </style>
+    
 
-    </script>
 </head>
 
 <body>
@@ -24,42 +21,47 @@
 
 
                 <div onclick="CopyToClipboard('{{name}}')" class="saved_color">
-                
+
                     <div id="{{name}}" class="color-img1" style="background-color: rgb({{color1}});">
                         <h2 class="pallet_code">{{color1}}</h2>
                     </div>
-                    
+
                 </div>
 
 
                 <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
-                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color2}});"><h2 class="pallet_code">{{color2}}</h2></div>
-                    
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color2}});">
+                        <h2 class="pallet_code">{{color2}}</h2>
+                    </div>
+
                 </div>
-                
+
                 <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
-                    
+
                     <div id="{{name}}" class="color-img1" style="background-color: rgb({{color3}});">
-                        <h2 class="pallet_name" >{{name}}</h2>
+                        <h2 class="pallet_name">{{name}}</h2>
                         <h2 class="pallet_code">{{color3}}</h2>
                     </div>
-                    
+
                 </div>
                 <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
                     <div id="{{name}}" class="color-img1" style="background-color: rgb({{color4}});">
-                        <h2 class="pallet_code">{{color4}}</h2></div>
-                    
+                        <h2 class="pallet_code">{{color4}}</h2>
+                    </div>
+
                 </div>
                 <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
-                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color5}});"><h2 class="pallet_code">{{color5}}</h2></div>
-                    
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color5}});">
+                        <h2 class="pallet_code">{{color5}}</h2>
+                    </div>
+
                 </div>
 
             </div>
-            
+
             <form class="del" method="POST" action="/delete_pallet_action">
-            <input type="hidden" value='{{name}}' name='name'>
-            <button type="submit" class="button">Delete</button>
+                <input type="hidden" value='{{name}}' name='name'>
+                <button type="submit" class="button">Delete</button>
             </form>
         </div>
 

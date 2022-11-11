@@ -12,9 +12,9 @@
     <div class="section1">
         <div class="colors">
             {% for r,g,b,i in generated_colors %}
-                <div class="color" style="background-color: rgb({{r}},{{g}},{{b}});">
+                <div onclick="CopyToClipboard('{{i}}');return false;" class="color" style="background-color: rgb({{r}},{{g}},{{b}});">
                 <div class="color-text" data="{{i}}">
-                      <h2 class="pallet_code_main">{{r}},{{g}},{{b}}</h2></div>
+                      <h2 id="{{i}}" class="pallet_code_main">{{r}},{{g}},{{b}}</h2></div>
                 
             </div>
             

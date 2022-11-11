@@ -6,11 +6,12 @@ from database import insert_data, sql_select1, sql_select, delete_pallet
 import os
 
 app = Flask(__name__)
+
+secret_key = os.environ.get('secret_key')
+print(secret_key)
+app.secret_key = secret_key
+# app.secret_key = 'SECRET_KEY'
 # app.secret_key = os.urandom(24)
-# secret_key = os.environ.get('secret_key')
-# print(secret_key)
-# app.secret_key = secret_key
-app.secret_key = 'SECRET_KEY'
 
 
 ## HOME PAGE 
@@ -69,7 +70,6 @@ def log_in():
     return render_template('login.html')
 
 
-
 @app.route('/login_page_action', methods=['POST'])
 def login_page_action():
     user_email = request.form.get('email')
@@ -87,7 +87,7 @@ def login_page_action():
         session['user_id'] = f'{id}'
         response.set_cookie('user_name', f'{name}')
     else:
-        error = 'You arent registered'
+        
         return redirect('/login_page')
 
     return response
@@ -114,6 +114,7 @@ def log_out_action():
     return response 
 
 
+## LOAD SAVED / DELETE SAVED
 @app.route('/profile')
 def profile():
     user_id = session.get('user_id')
