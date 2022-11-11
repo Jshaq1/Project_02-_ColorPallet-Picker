@@ -4,12 +4,10 @@
 
 <head>
     <style>
-        .color-img1 {
-            height: 100px;
-
-
-        }
+        
     </style>
+
+    </script>
 </head>
 
 <body>
@@ -21,47 +19,64 @@
 
         {% for name, color1, color2, color3, color4, color5 in saved_pallets %}
         <div class="pallet">
-        <div class="saved_colors">
+            <!-- <h2>{{name}}</h2> -->
+            <div class="saved_colors">
 
-            
-                <div class="saved_color">
-                    <div class="color-img1" style="background-color: rgb({{color1}});">
+
+                <div onclick="CopyToClipboard('{{name}}')" class="saved_color">
+                
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color1}});">
+                        <h2 class="pallet_code">{{color1}}</h2>
                     </div>
-                    <!-- <div  class="color-text" data="{{i}}">{{color1}}</div> -->
+                    
                 </div>
+
+
+                <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color2}});"><h2 class="pallet_code">{{color2}}</h2></div>
+                    
+                </div>
+                
+                <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
+                    
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color3}});">
+                        <h2 class="pallet_name" >{{name}}</h2>
+                        <h2 class="pallet_code">{{color3}}</h2>
+                    </div>
+                    
+                </div>
+                <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color4}});">
+                        <h2 class="pallet_code">{{color4}}</h2></div>
+                    
+                </div>
+                <div onclick="CopyToClipboard('{{name}}');return false;" class="saved_color">
+                    <div id="{{name}}" class="color-img1" style="background-color: rgb({{color5}});"><h2 class="pallet_code">{{color5}}</h2></div>
+                    
+                </div>
+
+            </div>
             
-
-            <div class="saved_color">
-                <div class="color-img1" style="background-color: rgb({{color2}});"></div>
-                <!-- <div class="color-text" data="{{i}}">{{color2}}</div> -->
-            </div>
-            <div class="saved_color">
-                <div class="color-img1" style="background-color: rgb({{color3}});"></div>
-                <!-- <div class="color-text" data="{{i}}">{{color3}}</div> -->
-            </div>
-            <div class="saved_color">
-                <div class="color-img1" style="background-color: rgb({{color4}});"></div>
-                <!-- <div class="color-text" data="{{i}}">{{color4}}</div> -->
-            </div>
-            <div class="saved_color">
-                <div class="color-img1" style="background-color: rgb({{color5}});"></div>
-                <!-- <div class= "color-text" data="{{i}}">{{color5}}</div> -->
-            </div>
-
-
-            
-        </div>
-        <form method="POST" action="/delete_pallet_action">
+            <form class="del" method="POST" action="/delete_pallet_action">
             <input type="hidden" value='{{name}}' name='name'>
-            <button class="del button">Delete</button>
-        </form>
-    </div>
+            <button type="submit" class="button">Delete</button>
+            </form>
+        </div>
 
 
 
         {% endfor %}
     </div>
-    <script src="script.js"></script>
+    <script src="/script.js">
+        function CopyToClipboard(id) {
+            var r = document.createRange();
+            r.selectNode(document.getElementById(id));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(r);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+    </script>
 </body>
 
 </html>

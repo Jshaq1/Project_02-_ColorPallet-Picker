@@ -23,9 +23,8 @@
             </div>
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <!-- <h1>{{user_name}}</h1> -->
+                <a class="user_name" >{{user_name}}</a>
                 <a href="/profile">Saved</a>
-                <a href="#">Popular</a>
                 <a href="/logout" >Logout</a>
                 <a ></a>
                 <a ></a>
@@ -62,5 +61,14 @@
         function closeNav() {
           document.getElementById("mySidenav").style.width = "0";
         }
+
+        function CopyToClipboard(id){
+            let r = document.createRange();
+            r.selectNode(document.getElementById(id));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(r);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            }
         </script>
 </body>

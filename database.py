@@ -10,6 +10,7 @@ def insert_data(query, params = []):
     cur = conn.cursor()
     cur.execute(query, params)
     conn.commit()
+    return 
 
 
 def sql_select1(query, params = []):
@@ -34,3 +35,4 @@ def delete_pallet(name, id):
     cur = conn.cursor()
     cur.execute(f'DELETE FROM saved_pallets WHERE (name = %s AND user_id = %s)', [name, id])
     conn.commit()
+    return

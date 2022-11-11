@@ -117,22 +117,24 @@ def log_out_action():
 def profile():
     user_id = session.get('user_id')
     user_name = request.cookies.get('user_name')
+    
 
     results = sql_select('SELECT name, color1, color2, color3, color4, color5 FROM saved_pallets WHERE user_id = %s', [user_id])
     saved_pallets=[]
     for row in results:
         name, color1, color2, color3, color4, color5 = row
-        saved_pallets.append([name, color1, color2, color3, color4, color5])
+        saved_pallets.append([(name.upper()), color1, color2, color3, color4, color5])
     
 
 
-    return render_template('profile.html', saved_pallets = saved_pallets)
+    return render_template('profile.html', saved_pallets = saved_pallets, user_name=user_name)
 
 @app.route('/delete_pallet_action', methods=['POST'])
 def delete_pallet_action():
     name = request.form.get('name')
     user_id = session.get('user_id')
-    delete_pallet(name, user_id)
+    delete_pallet((name.lower()), user_id)
+    print(user_id)
     return redirect('/profile')
 
 if __name__ == '__main__':
