@@ -6,10 +6,11 @@ from database import insert_data, sql_select1, sql_select, delete_pallet
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+# app.secret_key = os.urandom(24)
 # secret_key = os.environ.get('secret_key')
 # print(secret_key)
 # app.secret_key = secret_key
+app.secret_key = 'SECRET_KEY'
 
 
 ## HOME PAGE 
