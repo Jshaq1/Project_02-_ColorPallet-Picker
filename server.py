@@ -6,7 +6,7 @@ from database import insert_data, sql_select1, sql_select, delete_pallet
 import os
 
 app = Flask(__name__)
-
+app.secret_key = os.urandom(24)
 # secret_key = os.environ.get('secret_key')
 # print(secret_key)
 # app.secret_key = secret_key
@@ -138,7 +138,7 @@ def delete_pallet_action():
     return redirect('/profile')
 
 if __name__ == '__main__':
-    app.secret_key = os.urandom(24)
+    
     app.run(debug=True)
 
 
