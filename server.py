@@ -7,9 +7,9 @@ import os
 
 app = Flask(__name__)
 
-secret_key = os.environ.get('secret_key')
-print(secret_key)
-app.secret_key = secret_key
+# secret_key = os.environ.get('secret_key')
+# print(secret_key)
+# app.secret_key = secret_key
 
 
 ## HOME PAGE 
@@ -138,6 +138,7 @@ def delete_pallet_action():
     return redirect('/profile')
 
 if __name__ == '__main__':
+    app.secret_key = os.urandom(24)
     app.run(debug=True)
 
 
