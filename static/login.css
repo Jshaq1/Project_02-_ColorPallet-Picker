@@ -1,37 +1,70 @@
-#form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 400px;
-   
+.graphic_bar{
+    width: 3px;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.34);
+    margin-top: 50px;
 }
 
 #form_login{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     height: 100px;
+    width: 500px;
    
 }
 
-#form_container_email{
+ 
+.login-container {
+    font-family: 'Poppins', sans-serif; 
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: 1.5rem;
+    margin-top: 10vh;
     
-    width: 100%;
-    height: 500px;
+    
+  }
 
-}
 
-#form_container{
+
+.form__field{
+    flex: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    width: 80%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: rgb(255, 166, 0);
+    padding: 7px 0;
+    background: transparent;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
     
-    width: 100%;
-    height: 200px;
-
+    
+    
 }
 
-.form-heading{
-    color: white;
-}
+
+.form__field::placeholder{
+    color: rgba(112, 112, 112, 0.733);
+  }
+.form__field:focus::placeholder{
+    color: rgba(255, 255, 255, 0.319);
+  }
+
+.form__field:focus {
+    padding-bottom: 6px;  
+    font-weight: 700;
+    color: rgb(255, 166, 0);
+  }
+
+ 
+  
+

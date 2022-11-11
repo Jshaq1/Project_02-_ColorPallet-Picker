@@ -6,7 +6,7 @@
     <style>
         .color-img1 {
             height: 100px;
-            border-radius: 12px;
+
 
         }
     </style>
@@ -14,42 +14,56 @@
 
 <body>
 
-    {% for name, color1, color2, color3, color4, color5 in saved_pallets  %}
-    <div class="section1">
 
-        
-        <h2>{{name}}</h2>
+    <div class="saved_pallets">
 
-        <div class="colors">
+
+
+        {% for name, color1, color2, color3, color4, color5 in saved_pallets %}
+        <div class="pallet">
+        <div class="saved_colors">
+
             
-            <div class="color">
-                <div class="color-img1" style="background-color: rgb({{color1}});"></div>
-                <div class="color-text" data="{{i}}">{{color1}}</div>
-            </div>
-            <div class="color">
+                <div class="saved_color">
+                    <div class="color-img1" style="background-color: rgb({{color1}});">
+                    </div>
+                    <!-- <div  class="color-text" data="{{i}}">{{color1}}</div> -->
+                </div>
+            
+
+            <div class="saved_color">
                 <div class="color-img1" style="background-color: rgb({{color2}});"></div>
-                <div class="color-text" data="{{i}}">{{color2}}</div>
+                <!-- <div class="color-text" data="{{i}}">{{color2}}</div> -->
             </div>
-            <div class="color">
+            <div class="saved_color">
                 <div class="color-img1" style="background-color: rgb({{color3}});"></div>
-                <div class="color-text" data="{{i}}">{{color3}}</div>
+                <!-- <div class="color-text" data="{{i}}">{{color3}}</div> -->
             </div>
-            <div class="color">
+            <div class="saved_color">
                 <div class="color-img1" style="background-color: rgb({{color4}});"></div>
-                <div class="color-text" data="{{i}}">{{color4}}</div>
+                <!-- <div class="color-text" data="{{i}}">{{color4}}</div> -->
             </div>
-            <div class="color">
+            <div class="saved_color">
                 <div class="color-img1" style="background-color: rgb({{color5}});"></div>
-                <div class="color-text" data="{{i}}">{{color5}}</div>
+                <!-- <div class= "color-text" data="{{i}}">{{color5}}</div> -->
             </div>
-            <form method="POST" action="/delete_pallet_action"><input type="hidden" value='{{name}}'
-                name='name'><button>Delete</button></form>
+
+
             
         </div>
+        <form method="POST" action="/delete_pallet_action">
+            <input type="hidden" value='{{name}}' name='name'>
+            <button class="del button">Delete</button>
+        </form>
+    </div>
+
+
+
         {% endfor %}
-        <script src="script.js"></script>
-    </body>
-    
-    </html>
-    
-    {% endblock %}
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+{% endblock %}

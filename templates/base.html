@@ -6,8 +6,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
         </style>
     <link rel="stylesheet" href="static/styles.css" />
-    <!-- <link rel="stylesheet" href="static/login.css" /> -->
-    <link rel="stylesheet" href="static/pallet.css" />
+    <link rel="stylesheet" href="static/login.css" />
+    <link rel="stylesheet" href="static/nav.css" />
     <title>My Webpage</title>
 
 </head>
@@ -16,15 +16,37 @@
     <header>
         <nav id="navbar">
             {% if session.get('user_id') %}
-            
-            <a class="nav-link" href="/">hue.</a>
-            <a class="nav-link" href="/profile">{{user_name}}</a>
+            <div class="hamburger" onclick="openNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- <h1>{{user_name}}</h1> -->
+                <a href="/profile">Saved</a>
+                <a href="#">Popular</a>
+                <a href="/logout" >Logout</a>
+                <a ></a>
+                <a ></a>
+              </div>
+            <a class="nav-link" href="/">Hue.</a>
+        
             {% else %}
-            <a class="nav-link" href="/">Look//Feel</a>
-            <a class="nav-link" href="/login_page"><b>Login</b></a>
+            <div class="hamburger" onclick="openNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- <h1>{{user_name}}</h1> -->
+                <a href="/login_page" >Login</a>
+                <a ></a>
+                <a ></a>
+              </div>
+            <a class="nav-link" href="/">Hue.</a>
             {% endif %}
-
-
 
         </nav>
 
@@ -32,5 +54,13 @@
 
     {% block content %}{% endblock %}
 
-
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "300px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
 </body>

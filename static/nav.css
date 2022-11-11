@@ -1,0 +1,105 @@
+header{
+    justify-content: center;
+    height: 10vh;
+}
+
+#navbar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 15px;
+    height: 100%;
+    
+ }
+ 
+ .nav-link {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 6vh;
+    color: rgb(255, 166, 0);
+ }
+
+ .hamburger{
+    margin-right: 15px;
+    margin-bottom: 3px;
+ }
+ 
+ .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+
+ a:visited { 
+    text-decoration: none; 
+   }
+
+
+.sidenav {
+    height: 82vh; 
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 10vh; 
+    left: 0;
+    /* background-color: rgba(255, 153, 0, 0.741); Black */
+    overflow-x: hidden;
+    padding-top: 40px;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    
+  }
+  
+  .sidenav a {
+    flex: 1;
+    padding-left: 20px;
+    text-decoration: none;
+    margin-bottom: 50px;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-size: 50px;
+    text-align: left;
+    justify-content:center;
+    color: white;
+    font-family: 'Alfa Slab One', cursive;;
+  }
+  
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }

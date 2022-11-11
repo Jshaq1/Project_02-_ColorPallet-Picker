@@ -10,10 +10,6 @@
 
 
     <div class="section1">
-
-
-        
-
         <div class="colors">
             {% for r,g,b,i in generated_colors %}
                 <div class="color" style="background-color: rgb({{r}},{{g}},{{b}});">
@@ -23,25 +19,26 @@
             
             {% endfor %}
         </div>
-
+    </div>
         <div class="section2">
             <form class="generate" action="/">
                 <input type="hidden" value={{id}} name='id'>
-                <button class="btn">Generate</button>
+                <button class="button">Generate</button>
             </form>
             {% if session.get('user_id') %}
-            <form action="/save" method="POST">
+            <form class="save" action="/save" method="POST">
                 {% for r,g,b,i in generated_colors %}
                 <input type="hidden" value='{{r}},{{g}},{{b}}' name='color_codes{{i}}'>
                 {% endfor %}
-                <input type="text" name="pallet_name" placeholder="Pallet Name">
-                <input type="submit" value="Save Pallet">
+                <input class="saveP" type="text" name="pallet_name" placeholder="Pallet Name">
+                <input class="button" type="submit" value="Save">
             </form>
+            
             {% endif %}
 
-        </div>
-        </div>
-        <script src="script.js"></script>
+    
+        
+        <script src="Project_02_ColorPallet-Picker/script.js" ></script>
 </body>
 
 </html>

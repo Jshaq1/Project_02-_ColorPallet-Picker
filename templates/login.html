@@ -4,38 +4,37 @@
 
 
 <div class="login-container">
-    <!-- <div class="message signup">
-        <div class="button-wrapper">
-            <button class="button" id="signup">Sign Up</button>
-            <button class="button" id="login">Login</button>
-        </div> -->
-        <div class="form form-signup">
-            <div class="form-heading">Welcome: Sign Up</div>
-            <form id="form_login" method="POST" action="/sign_up_action">
-                <input type="hidden" value={{id}} name='id'>
-                <input type="text" name="name" placeholder="Name">
-                <input type="text" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit">
-            </form>
+
+
+    <div class="form_group field">
+
+        <div class="title">
+            <h1>Welcome Back!</h1>
         </div>
-        <div class="form form-login">
-            <div class="form-heading">Welcome Back</div>
-            <form id="form_login" method="POST" action='/login_page_action'>
-                <input type="hidden" value={{id}} name='id'>
-                <input type="text" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit">
-            </form>
-        </div>
+        <form id="form_login" method="POST" action='/login_page_action'>
+            <input type="hidden" value={{id}} name='id'>
+            <input class="form__field" type="text" name="email" placeholder="Email">
+            <input class="form__field" type="password" name="password" placeholder="Password">
+            <input class="button" style="width: 25%;" type="submit">
+        </form>
     </div>
-   
 
+    <div class="graphic_bar"></div>
 
+    <div class="form_field">
 
+        <div class="title">
+            <h1>Sign up</h1>
+        </div>
 
-
-
+        <form id="form_login" method="POST" action='/sign_up_action'>
+            <input type="hidden" value={{id}} name='id'>
+            <input class="form__field" type="text" name="name" placeholder="Name" required>
+            <input class="form__field" type="text" name="email" placeholder="Email" required>
+            <input class="form__field" type="password" name="password" placeholder="Password" required>
+            <input class="button" style="width: 25%;" type="submit">
+        </form>
+    </div>
 </div>
 <script src="script.js"></script>
 {% endblock %}
