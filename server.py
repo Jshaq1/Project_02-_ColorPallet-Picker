@@ -124,7 +124,7 @@ def profile():
     saved_pallets=[]
     for row in results:
         name, color1, color2, color3, color4, color5 = row
-        saved_pallets.append([(name.upper()), color1, color2, color3, color4, color5])
+        saved_pallets.append([name, color1, color2, color3, color4, color5])
     
 
 
@@ -134,7 +134,7 @@ def profile():
 def delete_pallet_action():
     name = request.form.get('name')
     user_id = session.get('user_id')
-    delete_pallet((name.lower()), user_id)
+    delete_pallet((name, user_id)
     print(user_id)
     return redirect('/profile')
 
