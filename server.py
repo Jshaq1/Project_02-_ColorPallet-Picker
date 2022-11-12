@@ -134,7 +134,7 @@ def profile():
 def delete_pallet_action():
     name = request.form.get('name')
     user_id = session.get('user_id')
-    delete_pallet((name, user_id)
+    delete_pallet(name, user_id)
     print(user_id)
     return redirect('/profile')
 
