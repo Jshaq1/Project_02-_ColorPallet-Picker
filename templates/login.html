@@ -13,8 +13,8 @@
         </div>
         <form id="form_login" method="POST" action='/login_page_action'>
             <input type="hidden" value={{id}} name='id'>
-            <input class="form__field" type="text" name="email" placeholder="Email">
-            <input class="form__field" type="password" name="password" placeholder="Password">
+            <input class="form__field" type="text" name="email" placeholder="Email" required>
+            <input class="form__field" type="password" name="password" placeholder="Password" required>
             <input class="button" style="width: 25%;" type="submit">
         </form>
     </div>

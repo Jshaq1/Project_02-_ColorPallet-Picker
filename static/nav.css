@@ -45,13 +45,14 @@ header{
 
 
 .sidenav {
-    height: 82vh; 
+    height: 78vh; 
     width: 0; 
     position: fixed;
     z-index: 1;
     top: 10vh; 
     left: 0;
-    /* background-color: rgba(255, 153, 0, 0.741); Black */
+    background: rgb(210,210,210);
+    background: linear-gradient(90deg, rgba(210,210,210,1) 0%, rgba(0,212,255,0) 100%);
     overflow-x: hidden;
     padding-top: 40px;
     transition: 0.5s;
@@ -80,7 +81,7 @@ header{
   
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color:rgb(255, 166, 0);
   }
   
   

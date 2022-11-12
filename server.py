@@ -10,8 +10,7 @@ app = Flask(__name__)
 secret_key = os.environ.get('secret_key')
 print(secret_key)
 app.secret_key = secret_key
-# app.secret_key = 'SECRET_KEY'
-# app.secret_key = os.urandom(24)
+
 
 
 ## HOME PAGE 
