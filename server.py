@@ -18,9 +18,7 @@ app.secret_key = secret_key
 def index():
     user_id = session.get('user_id')
     user_name = request.cookies.get('user_name')
-   
-    
-    
+
     
     url = "http://colormind.io/api/"
     data = {
@@ -38,9 +36,6 @@ def index():
         i += 1
         generated_colors.append([r,g,b,i])
         
-
-
-  
     return render_template('index.html', generated_colors = generated_colors, user_name = user_name, colors=colors)
     
 @app.route('/save', methods=['POST', 'GET'])
