@@ -59,7 +59,8 @@ header{
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 50px;
     
   }
   
@@ -68,13 +69,10 @@ header{
     padding-left: 20px;
     text-decoration: none;
     margin-bottom: 50px;
-    font-size: 25px;
     color: #818181;
-    display: block;
     transition: 0.3s;
     font-size: 50px;
     text-align: left;
-    justify-content:center;
     color: white;
     font-family: 'Alfa Slab One', cursive;;
   }

@@ -86,6 +86,15 @@ def login_page_action():
 
     return response
 
+@app.route('/guest_login', methods=['POST'])
+def guest_login_action():
+    results = sql_select1(f'SELECT * FROM users WHERE email = %s', ['guest@gmail.com'])
+    id, name, email, password_hash = list(results)
+    response = redirect('/')
+    session['user_id'] = f'{id}'
+    response.set_cookie('user_name', f'{name}')
+
+    return response 
 
 @app.route('/sign_up_action', methods=['POST'])
 def sign_up_action():
