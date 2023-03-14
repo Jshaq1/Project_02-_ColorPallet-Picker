@@ -57,10 +57,11 @@ header{
     padding-top: 40px;
     transition: 0.5s;
     display: flex;
+    gap: 40px;
     flex-direction: column;
     overflow: hidden;
     justify-content: flex-start;
-    gap: 50px;
+    
     
   }
   
