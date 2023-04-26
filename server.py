@@ -8,7 +8,6 @@ import os
 app = Flask(__name__)
 
 secret_key = os.environ.get('secret_key')
-print(secret_key)
 app.secret_key = secret_key
 
 

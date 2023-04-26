@@ -12,6 +12,7 @@
     align-items: center;
     height: 100px;
     width: 500px;
+    margin-bottom: 40px;
    
 }
 
@@ -68,3 +69,23 @@
  
   
 
+#guest_form_login{
+  display: flex;
+  margin: 0 auto;
+  width: 400px;
+  justify-content: center;
+}
+
+.guest_button{
+  margin: 0 ;
+  width: 35%;
+  background: none;
+  border: none;
+  
+}
+.guest_button:hover{
+  color: rgb(255, 166, 0);
+}
+.guest_button:active{
+  scale: 110%;
+}
