@@ -2,77 +2,78 @@
 <html>
 
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-41D7V7BNBY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-41D7V7BNBY');
-</script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
-        </style>
-    <link rel="stylesheet" href="static/styles.css" />
-    <link rel="stylesheet" href="static/login.css" />
-    <link rel="stylesheet" href="static/nav.css" />
-    <title>My Webpage</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-991EDXVKSS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-991EDXVKSS');
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+  </style>
+  <link rel="stylesheet" href="static/styles.css" />
+  <link rel="stylesheet" href="static/login.css" />
+  <link rel="stylesheet" href="static/nav.css" />
+  <title>My Webpage</title>
 
 </head>
 
 <body>
-    <header>
-        <nav id="navbar">
-            {% if session.get('user_id') %}
-            <div class="hamburger" onclick="openNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-               <div><a class="user_name" >{{user_name}}</a></div> 
-               <div><a href="/profile">Saved</a></div> 
-                <div><a href="/logout" >Logout</a></div>
-              </div>
-            <a class="nav-link" href="/">Hue.</a>
-        
-            {% else %}
-            <div class="hamburger" onclick="openNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div><a href="/login_page" >Login</a></div>
-              </div>
-            <a class="nav-link" href="/">Hue.</a>
-            {% endif %}
+  <header>
+    <nav id="navbar">
+      {% if session.get('user_id') %}
+      <div class="hamburger" onclick="openNav()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div><a class="user_name">{{user_name}}</a></div>
+        <div><a href="/profile">Saved</a></div>
+        <div><a href="/logout">Logout</a></div>
+      </div>
+      <a class="nav-link" href="/">Hue.</a>
 
-        </nav>
+      {% else %}
+      <div class="hamburger" onclick="openNav()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div><a href="/login_page">Login</a></div>
+      </div>
+      <a class="nav-link" href="/">Hue.</a>
+      {% endif %}
 
-    </header>
+    </nav>
 
-    {% block content %}{% endblock %}
+  </header>
 
-    <script>
-        function openNav() {
-          document.getElementById("mySidenav").style.width = "300px";
-        }
-        
-        function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";
-        }
+  {% block content %}{% endblock %}
 
-        function CopyToClipboard(id){
-            let r = document.createRange();
-            r.selectNode(document.getElementById(id));
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(r);
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();
-            }
-        </script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "300px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function CopyToClipboard(id) {
+      let r = document.createRange();
+      r.selectNode(document.getElementById(id));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+    }
+  </script>
 </body>
