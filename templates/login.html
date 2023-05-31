@@ -15,11 +15,12 @@
             <input type="hidden" value={{id}} name='id'>
             <input class="form__field" type="text" name="email" placeholder="Email" required>
             <input class="form__field" type="password" name="password" placeholder="Password" required>
+            <form id='guest_form_login' method="POST" action='/guest_login'>
+                <input class="guest_button"  type="submit" placeholder="sign" value="Sign In as Guest">
+            </form>
             <input class="button" style="width: 25%;" type="submit">
         </form>
-        <form id='guest_form_login' method="POST" action='/guest_login'>
-            <input class="guest_button"  type="submit" placeholder="sign" value="Sign In as Guest">
-        </form>
+        
     </div>
 
     <div class="graphic_bar"></div>
